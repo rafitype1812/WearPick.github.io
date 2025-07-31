@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WearPick - Keranjang Belanja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <header>
+    <div class="logo">
+        <a href="index.html">WearPick</a>
+    </div>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produk.html">Produk</a></li>
+            <li><a href="wearpicker.html">WearPicker</a></li>
+            <li><a href="konsultasi.html">Konsultasi Gaya</a></li>
+            <li><a href="tentang.html">Tentang Kami</a></li>
+        </ul>
+        
+        <div class="cart-icon">
+            <a href="keranjang.html">🛒</a>
+            <span id="cart-counter" class="hidden">0</span>
+        </div>
+        
+    </nav>
+</header>
+
+    <main>
+        <section class="cart-section">
+            <h1>Keranjang Belanja Anda</h1>
+            <div id="cart-items">
+                <p>Keranjang Anda kosong.</p>
+            </div>
+            <div class="cart-summary">
+                <p>Total: <span id="cart-total">Rp 0</span></p>
+                <a href="pembayaran.html" class="cta-button" id="checkout-button">Lanjutkan ke Pembayaran</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+         <div class="footer-content">
+        <p>&copy; <span id="current-year">2025</span> WearPick. All Rights Reserved.</p>
+        <div class="social-media">
+            
+    </div>
+        </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

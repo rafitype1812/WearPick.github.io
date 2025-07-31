@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konsultasi Gaya - WearPick</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <header>
+    <div class="logo">
+        <a href="index.html">WearPick</a>
+    </div>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produk.html">Produk</a></li>
+            <li><a href="wearpicker.html">WearPicker</a></li>
+            <li><a href="konsultasi.html">Konsultasi Gaya</a></li>
+            <li><a href="tentang.html">Tentang Kami</a></li>
+        </ul>
+        
+        <div class="cart-icon">
+            <a href="#">🛒</a>
+            <span id="cart-counter" class="hidden">0</span>
+        </div>
+       
+    </nav>
+</header>
+
+    <main>
+      <div class="container-konsultasi">
+        <h1>Butuh Bantuan Menemukan Gaya Anda?</h1>
+        <p>Biarkan tim stylist kami di WearPick membantu Anda!...</p>
+        <form id="form-konsultasi">
+    <div class="form-grup">
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama" required>
+    </div>
+
+    <div class="form-grup">
+        <label for="email">Alamat Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-grup">
+        <label for="gaya">Gaya yang Anda Sukai:</label>
+        <select id="gaya" name="gaya">
+            <option value="casual">Casual (Sehari-hari)</option>
+            <option value="formal">Formal (Kantor/Pesta)</option>
+            <option value="streetwear">Streetwear</option>
+            <option value="vintage">Vintage</option>
+            <option value="minimalis">Minimalis</option>
+        </select>
+    </div>
+
+    <div class="form-grup">
+        <label for="acara">Rekomendasi untuk Acara Apa?</label>
+        <textarea id="acara" name="acara" rows="4" placeholder="Contoh: Untuk wawancara kerja minggu depan..."></textarea>
+    </div>
+
+    <button type="submit" class="tombol-kirim">Minta Rekomendasi</button>
+</form>
+
+<div id="pesan-sukses" style="display: none; text-align: center; margin-top: 20px;">
+    <h2>Terima Kasih!</h2>
+    <p>Rekomendasi gaya Anda sedang kami siapkan. Tim kami akan segera menghubungi Anda melalui email.</p>
+</div>
+        </div>  
+    </main>
+
+    <footer>
+         <div class="footer-content">
+        <p>&copy; <span id="current-year">2025</span> WearPick. All Rights Reserved.</p>
+        <div class="social-media">
+           
+    </div>
+        </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

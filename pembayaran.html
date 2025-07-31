@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WearPick - Pembayaran</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="konfirmasipembayaran" href="konfirmasipembayaran.html">
+</head>
+<body>
+
+   <header>
+    <div class="logo">
+        <a href="index.html">WearPick</a>
+    </div>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produk.html">Produk</a></li>
+            <li><a href="wearpicker.html">WearPicker</a></li>
+            <li><a href="konsultasi.html">Konsultasi Gaya</a></li>
+            <li><a href="tentang.html">Tentang Kami</a></li>
+        </ul>
+        
+        <div class="cart-icon">
+            <a href="keranjang.html">🛒</a>
+            <span id="cart-counter" class="hidden">0</span>
+        </div>
+        
+    </nav>
+</header>
+
+    <main>
+        <section class="checkout-section">
+            <h1>Detail Pembayaran</h1>
+            <form id="checkout-form">
+                <fieldset>
+                    <legend>Informasi Pengiriman</legend>
+                    <label for="nama">Nama Lengkap:</label>
+                    <input type="text" id="nama" name="nama" required>
+
+                    <label for="alamat">Alamat Lengkap:</label>
+                    <textarea id="alamat" name="alamat" rows="4" required></textarea>
+
+                    <label for="kota">Kota:</label>
+                    <input type="text" id="kota" name="kota" required>
+
+                    <label for="kode-pos">Kode Pos:</label>
+                    <input type="text" id="kode-pos" name="kode-pos" required>
+
+                    <label for="telepon">Nomor Telepon:</label>
+                    <input type="tel" id="telepon" name="telepon" required>
+                </fieldset>
+
+                <fieldset class="payment-method-fieldset">
+    <legend>Metode Pembayaran</legend>
+
+    <div class="payment-option">
+        <input type="radio" id="bank-transfer" name="metode-pembayaran" value="bank-transfer" checked>
+        <label for="bank-transfer">
+            <span>Transfer Bank</span>
+        </label>
+        <div id="bank-transfer-details" class="payment-details active-details">
+            <label>Pilih Bank:</label>
+            <select name="bank-transfer-bank">
+                <option value="">-- Pilih Bank --</option>
+                <option value="bca">Bank BCA</option>
+                <option value="mandiri">Bank Mandiri</option>
+                <option value="bni">Bank BNI</option>
+                <option value="bri">Bank BRI</option>
+                <option value="btn">Bank BTN</option>
+                <option value="cimb">CIMB Niaga</option>
+                <option value="permata">PermataBank</option>
+                </select>
+        </div>
+    </div>
+
+    <div class="payment-option">
+        <input type="radio" id="e-wallet" name="metode-pembayaran" value="e-wallet">
+        <label for="e-wallet">
+            <span>E-wallet</span>
+        </label>
+        <div id="e-wallet-details" class="payment-details">
+            <label>Pilih E-wallet:</label>
+            <select name="e-wallet-type">
+                <option value="">-- Pilih E-wallet --</option>
+                <option value="gopay">Gopay</option>
+                <option value="ovo">OVO</option>
+                <option value="dana">DANA</option>
+                <option value="shopeepay">ShopeePay</option>
+                <option value="linkaja">LinkAja</option>
+                </select>
+        </div>
+    </div>
+
+</fieldset>
+
+                <div class="order-summary">
+                    <h2>Ringkasan Pesanan</h2>
+                    <div id="order-summary-items">
+                        <p>Tidak ada item dalam pesanan.</p>
+                    </div>
+                    <p>Total Pembayaran: <span id="checkout-total">Rp X</span></p>
+                </div>
+
+                <a href="konfirmasipembayaran.html" class="cta-button">Konfirmasi Pembayaran</a><button type="submit"></button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+         <div class="footer-content">
+        <p>&copy; <span id="current-year">2025</span> WearPick. All Rights Reserved.</p>
+        <div class="social-media">
+            
+    </div>
+        </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

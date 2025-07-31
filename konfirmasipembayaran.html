@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WearPick - Rincian Pesanan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="konfirmasipembayaran" href="konfirmasipembayaran.html">
+
+    <style>
+        /* CSS Tambahan untuk halaman rincian pesanan */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        .confirmation-container {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 700px; /* Lebar lebih besar untuk rincian */
+            width: 90%;
+            margin: 20px;
+            text-align: left; /* Teks di dalam container rata kiri */
+        }
+
+        .confirmation-container h1 {
+            color: #e6bd56; /* Warna hijau untuk sukses */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center; /* Judul tetap di tengah */
+        }
+
+        .confirmation-container p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .confirmation-container .highlight {
+            font-weight: bold;
+            color: #e6bd56; /* Warna biru untuk highlight */
+        }
+
+        .order-summary-details {
+            margin-top: 25px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .order-summary-details h2 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+        }
+
+        .order-item-name {
+            font-weight: 500;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        .order-item-price {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .final-total {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #e6bd56;
+            text-align: right;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #e6bd56;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #e6bd56;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 30px;
+            text-decoration: none; /* Untuk link */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #d19807;
+            transform: translateY(-2px);
+        }
+
+        .cta-button:active {
+            background-color: #976d04;
+            transform: translateY(0);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .confirmation-container {
+                padding: 30px 20px;
+            }
+            .confirmation-container h1 {
+                font-size: 2em;
+            }
+            .confirmation-container p {
+                font-size: 1em;
+            }
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+            .order-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .order-item-price {
+                margin-top: 5px;
+            }
+            .final-total {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <h1>🎉 Pembayaran Berhasil!</h1>
+        <p>Terima kasih atas pesanan Anda di WearPick.</p>
+        <p>Pesanan Anda telah berhasil dikonfirmasi dan akan segera diproses.</p>
+        <p>Nomor Pesanan Anda: <span id="display-order-number" class="highlight">#WPXXXXXX</span></p>
+        <p>Detail pesanan dan instruksi lebih lanjut telah dikirimkan ke email Anda.</p>
+
+    
+        <a href="index.html" class="cta-button">Kembali ke Beranda</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderId = urlParams.get('orderId');
+            const confirmedOrderItemsDiv = document.getElementById('confirmed-order-items');
+            const confirmedTotalSpan = document.getElementById('confirmed-total');
+
+            // Tampilkan nomor pesanan
+            if (orderId) {
+                document.getElementById('display-order-number').textContent = orderId;
+            } else {
+                document.getElementById('display-order-number').textContent = '#WP' + Math.floor(Math.random() * 1000000); // Fallback
+            }
+
+            // Ambil data keranjang dan total dari sessionStorage
+            const sessionCartItems = JSON.parse(sessionStorage.getItem('wearpickConfirmedCartItems'));
+            const sessionTotalOrder = parseFloat(sessionStorage.getItem('wearpickConfirmedTotalOrder'));
+
+            if (sessionCartItems && sessionCartItems.length > 0 && !isNaN(sessionTotalOrder)) {
+                confirmedOrderItemsDiv.innerHTML = ''; // Kosongkan placeholder
+                sessionCartItems.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('order-item');
+                    itemElement.innerHTML = `
+                        <span class="order-item-name">${item.name} (x${item.quantity})</span>
+                        <span class="order-item-price">Rp ${(item.price * item.quantity).toLocaleString('id-ID')}</span>
+                    `;
+                    confirmedOrderItemsDiv.appendChild(itemElement);
+                });
+                confirmedTotalSpan.textContent = `Rp ${sessionTotalOrder.toLocaleString('id-ID')}`;
+
+                // Hapus data dari sessionStorage setelah ditampilkan
+                sessionStorage.removeItem('wearpickConfirmedCartItems');
+                sessionStorage.removeItem('wearpickConfirmedTotalOrder');
+            } else {
+                confirmedOrderItemsDiv.innerHTML = '<p>Rincian pesanan tidak ditemukan. Mungkin sesi telah berakhir atau halaman dimuat ulang.</p>';
+                confirmedTotalSpan.textContent = 'Rp 0';
+            }
+        });
+    </script>
+</body>
+</html>

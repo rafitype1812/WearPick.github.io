@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WearPicker - Mix & Match Gaya Anda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <header>
+    <div class="logo">
+        <a href="index.html">WearPick</a>
+    </div>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produk.html">Produk</a></li>
+            <li><a href="wearpicker.html">WearPicker</a></li>
+            <li><a href="konsultasi.html">Konsultasi Gaya</a></li>
+            <li><a href="tentang.html">Tentang Kami</a></li>
+        </ul>
+        
+        <div class="cart-icon">
+            <a href="#">🛒</a>
+            <span id="cart-counter" class="hidden">0</span>
+        </div>
+        
+    </nav>
+</header>
+
+   <main>
+    <div class="wearpicker-intro">
+        <h1>Pilih Tema Gaya Anda</h1>
+        <p>Mulailah dengan memilih tema outfit yang Anda inginkan.</p>
+    </div>
+
+    <div class="gender-selector">
+            <button class="gender-btn" data-gender="pria">👔 Pria</button>
+            <button class="gender-btn" data-gender="wanita">👗 Wanita</button>
+        </div>
+
+    <div class="theme-selector">
+        <button class="theme-btn" data-theme="casual">Casual</button>
+        <button class="theme-btn" data-theme="formal">Formal</button>
+        <button class="theme-btn" data-theme="streetwear">Streetwear</button>
+        <button class="theme-btn" data-theme="vintage">Vintage</button>
+        <button class="theme-btn" data-theme="minimalis">Minimalis</button>
+    </div>
+
+    <div class="wearpicker-container" id="wearpicker-container" style="display: none;">
+        
+        <div class="wardrobe">
+            <div class="category-selector">
+                <h2>Atasan</h2>
+                <div class="item-gallery">
+                    <img src="images/thumb-atasan-1.png" alt="Kemeja Putih" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-1.png" data-theme="formal">
+                    <img src="images/thumb-atasan-2.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-2.png" data-theme="formal">
+                    <img src="images/thumb-atasan-3.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-3.png" data-theme="formal minimalis">
+                    <img src="images/thumb-atasan-4.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-4.png" data-theme="formal">
+                    <img src="images/thumb-atasan-5.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-5.png" data-theme="formal minimalis">
+                    <img src="images/thumb-atasan-6.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-6.png" data-theme="streetwear">
+                    <img src="images/thumb-atasan-7.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-7.png" data-theme="streetwear">
+                    <img src="images/thumb-atasan-8.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-8.png" data-theme="streetwear">
+                    <img src="images/thumb-atasan-9.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-9.png" data-theme="casual">
+                    <img src="images/thumb-atasan-10.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-10.png" data-theme="casual streetwear">
+                    <img src="images/thumb-atasan-11.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-11.png" data-theme="casual minimalis">
+                    <img src="images/thumb-atasan-12.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-12.png" data-theme="casual streetwear">
+                    <img src="images/thumb-atasan-13.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-13.png" data-theme="casual">
+                    <img src="images/thumb-atasan-14.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-14.png" data-theme="vintage">
+                    <img src="images/thumb-atasan-15.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-15.png" data-theme="vintage">
+                    <img src="images/thumb-atasan-16.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-16.png" data-theme="vintage">
+                    <img src="images/thumb-atasan-17.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-17.png" data-theme="vintage">
+                    <img src="images/thumb-atasan-18.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-18.png" data-theme="vintage">
+                    <img src="images/thumb-atasan-19.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-19.png" data-theme="minimalis">
+                    <img src="images/thumb-atasan-20.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="wanita" data-category="atasan" data-image="images/full-atasan-20.png" data-theme="minimalis">
+                    <img src="images/thumb-atasan-21.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-21.png" data-theme="formal minimalis">
+                    <img src="images/thumb-atasan-22.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-22.png" data-theme="casual">
+                    <img src="images/thumb-atasan-23.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-23.png" data-theme="formal minimalis">
+                    <img src="images/thumb-atasan-24.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-24.png" data-theme="streetwear">
+                    <img src="images/thumb-atasan-25.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-25.png" data-theme="casual minimalis">
+                    <img src="images/thumb-atasan-26.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-26.png" data-theme="streetwear">
+                    <img src="images/thumb-atasan-27.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-27.png" data-theme="minimalis">
+                    <img src="images/thumb-atasan-28.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-28.png" data-theme="vintage">
+                    <img src="images/thumb-atasan-29.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-29.png" data-theme="vintage">
+                    <img src="images/thumb-atasan-30.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-30.png" data-theme="vintage">
+                    <img src="images/thumb-atasan-31.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-31.png" data-theme="formal minimalis">
+                    <img src="images/thumb-atasan-32.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-32.png" data-theme="streetwear">
+                    <img src="images/thumb-atasan-33.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-33.png" data-theme="formal">
+                    <img src="images/thumb-atasan-34.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-34.png" data-theme="casual streetwear">
+                    <img src="images/thumb-atasan-35.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-35.png" data-theme="formal casual">
+                    <img src="images/thumb-atasan-36.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-36.png" data-theme="casual vintage">
+                    <img src="images/thumb-atasan-37.jpg" alt="Kaos Hitam" class="item-thumbnail" data-gender="pria" data-category="atasan" data-image="images/full-atasan-37.png" data-theme="streetwear vintage">
+                    
+                </div>
+            </div>
+            <div class="category-selector">
+                <h2>Bawahan</h2>
+                <div class="item-gallery">
+                    <img src="images/thumb-bawahan-1.png" alt="Celana Jeans" class="item-thumbnail" data-gender="wanita" data-category="bawahan" data-image="images/full-bawahan-1.png" data-theme="formal minimalis streetwear">
+                    <img src="images/thumb-bawahan-2.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="wanita" data-category="bawahan" data-image="images/full-bawahan-2.png" data-theme="formal">
+                    <img src="images/thumb-bawahan-3.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="wanita" data-category="bawahan" data-image="images/full-bawahan-3.png" data-theme="formal minimalis">
+                    <img src="images/thumb-bawahan-4.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="wanita" data-category="bawahan" data-image="images/full-bawahan-4.png" data-theme="formal minimalis">
+                    <img src="images/thumb-bawahan-5.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="wanita" data-category="bawahan" data-image="images/full-bawahan-5.png" data-theme="formal">
+                    <img src="images/thumb-bawahan-6.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="wanita" data-category="bawahan" data-image="images/full-bawahan-6.png" data-theme="streetwear">
+                    <img src="images/thumb-bawahan-7.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="wanita" data-category="bawahan" data-image="images/full-bawahan-7.png" data-theme="streetwear">
+                    <img src="images/thumb-bawahan-8.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="wanita" data-category="bawahan" data-image="images/full-bawahan-8.png" data-theme="streetwear">
+                    <img src="images/thumb-bawahan-9.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="wanita" data-category="bawahan" data-image="images/full-bawahan-9.png" data-theme="casual">
+                    <img src="images/thumb-bawahan-10.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="wanita" data-category="bawahan" data-image="images/full-bawahan-10.png" data-theme="casual">
+                    <img src="images/thumb-bawahan-11.jpg" alt="Celana Chino" class="item-thumbnail"data-gender="wanita" data-category="bawahan" data-image="images/full-bawahan-11.png" data-theme="casual minimalis">
+                    <img src="images/thumb-bawahan-12.jpg" alt="Celana Chino" class="item-thumbnail"data-gender="wanita" data-category="bawahan" data-image="images/full-bawahan-12.png" data-theme="casual">
+                    <img src="images/thumb-bawahan-13.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="wanita"data-category="bawahan" data-image="images/full-bawahan-13.png" data-theme="casual minimalis">
+                    <img src="images/thumb-bawahan-14.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="wanita"data-category="bawahan" data-image="images/full-bawahan-14.png" data-theme="vintage">
+                    <img src="images/thumb-bawahan-15.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="wanita"data-category="bawahan" data-image="images/full-bawahan-15.png" data-theme="vintage">
+                    <img src="images/thumb-bawahan-16.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="wanita"data-category="bawahan" data-image="images/full-bawahan-16.png" data-theme="vintage">
+                    <img src="images/thumb-bawahan-17.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="wanita"data-category="bawahan" data-image="images/full-bawahan-17.png" data-theme="vintage">
+                    <img src="images/thumb-bawahan-18.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="wanita"data-category="bawahan" data-image="images/full-bawahan-18.png" data-theme="vintage streetwear">
+                    <img src="images/thumb-bawahan-19.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="pria"data-category="bawahan" data-image="images/full-bawahan-19.png" data-theme="casual">
+                    <img src="images/thumb-bawahan-20.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="pria"data-category="bawahan" data-image="images/full-bawahan-20.png" data-theme="casual minimalis">
+                    <img src="images/thumb-bawahan-21.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="pria"data-category="bawahan" data-image="images/full-bawahan-21.png" data-theme="vintage formal minimalis">
+                    <img src="images/thumb-bawahan-22.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="pria"data-category="bawahan" data-image="images/full-bawahan-22.png" data-theme="formal vintage streetwear">
+                    <img src="images/thumb-bawahan-23.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="pria"data-category="bawahan" data-image="images/full-bawahan-23.png" data-theme="formal minimalis">
+                    <img src="images/thumb-bawahan-24.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="pria"data-category="bawahan" data-image="images/full-bawahan-24.png" data-theme="formal casual minimalis">
+                    <img src="images/thumb-bawahan-25.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="pria"data-category="bawahan" data-image="images/full-bawahan-25.png" data-theme="vintage streetwear">
+                    <img src="images/thumb-bawahan-26.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="pria"data-category="bawahan" data-image="images/full-bawahan-26.png" data-theme="streetwear casual">
+                    <img src="images/thumb-bawahan-27.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="pria"data-category="bawahan" data-image="images/full-bawahan-27.png" data-theme="formal">
+                    <img src="images/thumb-bawahan-28.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="pria"data-category="bawahan" data-image="images/full-bawahan-28.png" data-theme="vintage streetwear">
+                    <img src="images/thumb-bawahan-29.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="pria"data-category="bawahan" data-image="images/full-bawahan-29.png" data-theme="vintage casual streetwear">
+                    <img src="images/thumb-bawahan-30.jpg" alt="Celana Chino" class="item-thumbnail" data-gender="pria"data-category="bawahan" data-image="images/full-bawahan-30.png" data-theme="minimalis">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="selected-items-showcase" id="selected-items-showcase">
+            </div>
+
+    </div>
+</main>
+    <footer>
+         <div class="footer-content">
+        <p>&copy; <span id="current-year">2025</span> WearPick. All Rights Reserved.</p>
+        <div class="social-media">
+           
+    </div>
+        </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
